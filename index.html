@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticking</title>
+    <link rel="shortcut icon" href="./images/stoppage.png" type="image/x-icon">
+    <!-- Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- main  -->
+    <div class="">
+        <header class="lg:mt-5">
+            <div class="navbar bg-base-100">
+              <div class="navbar-start lg:justify-center">
+                <div class="dropdown">
+                  <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16"
+                      />
+                    </svg>
+                  </div>
+                  <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Details</a></li>
+                    <li><a>Search</a></li>
+                  </ul>
+                </div>
+                <a class="btn btn-ghost text-xl lg:text-5xl">E-Ticket</a>
+              </div>
+              <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-3xl">
+                  <li><a>Home</a></li>
+                  <li><a>About</a></li>
+                  <li><a>Details</a></li>
+                  <li><a>Search</a></li>
+                </ul>
+              </div>
+              <div class="navbar-end justify-center">
+                <a class="btn text-green-400 lg:text-xl bg-green-100">Bus <img src="./images/bus-icon.png" alt=""
+                  /></a>
+              </div>
+            </div>
+          </header>
+          <main>
+            <section class="mt-4" id="home-screen">
+              <div class="hero">
+                <img src="./Images/banner.png" class="w-3/4 rounded-lg shadow-2xl" />
+                <div class="hero-content">
+                  <div class="ml-12 mx-10 max-w-sm lg:max-w-md text-center">
+                    <h1
+                      class="mb-1 lg:mb-3 lg:-mt-14 text-xl lg:text-4xl font-extrabold text-white"
+                    >
+                      End-To-End Travel With
+                    </h1>
+                    <h1
+                      class="mb-1 lg:mb-4 text-xl lg:text-5xl font-bold text-green-400"
+                    >
+                      Nabil Paribahan
+                    </h1>
+                    <p
+                      class="mb-1 lg:mb-5 text-sm lg:text-base font-medium text-white"
+                    >
+                      Find the perfect ride for your trip with Nabil Paribahan. Book
+                      your bus tickets online and find a ride for any journey!
+                    </p>
+                    <button onclick="buyTicket()" class="btn text-black bg-green-400 text-xl border-none">
+                      <a href="#ticket-section-1">Buy Ticket</a>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- .......... -->
+              <div class="flex justify-center items-center gap-5 -mt-14">
+                <!-- 1st -->
+                <div
+                  class="flex justify-center items-center bg-white border-b-green-500 border-t-white border-x-white border-2 rounded-xl gap-x-2 p-4"
+                >
+                  <div>
+                    <img src="./images/people.png" alt="" />
+                  </div>
+                  <div>
+                    <p class="font-extrabold">500k+</p>
+                    <p>Registered users</p>
+                  </div>
+                </div>
+                <!-- 2nd -->
+                <div
+                  class="flex justify-center items-center bg-white border-b-green-500 border-t-white border-x-white border-2 rounded-xl gap-x-2 p-4"
+                >
+                  <div>
+                    <img src="./images/ticket-cupon.png" alt="" />
+                  </div>
+                  <div>
+                    <p class="font-extrabold">1.7 lacks</p>
+                    <p>Ticket sold</p>
+                  </div>
+                </div>
+                <!-- 3rd -->
+                <div
+                  class="flex justify-center items-center bg-white border-b-green-500 border-t-white border-x-white border-2 rounded-xl gap-x-2 p-4"
+                >
+                  <div>
+                    <img src="./images/stoppage.png" alt="" />
+                  </div>
+                  <div>
+                    <p class="font-extrabold">80k+</p>
+                    <p>Rental partners</p>
+                  </div>
+                </div>
+      
+                <!-- end -->
+              </div>
+            </section>
+      
+            <!-- coupon section start -->
+            <section class="text-center mt-12 mb-10">
+              <p class="text-3xl font-bold">Best offers for you</p>
+            </section>
+      
+            <section class="mb-10">
+              <!-- first coupon -->
+              <div class="flex justify-center items-center gap-x-5">
+                <div
+                  class="flex justify-center items-center bg-yellow-400 w-2/6 rounded-xl"
+                >
+                  <div class="m-auto">
+                    <p class="font-extrabold text-3xl">15% OFF</p>
+                    <p class="font-semibold">on your next purchase</p>
+                    <p class="text-gray-600">use by February 2024</p>
+                  </div>
+                  <div>
+                    <img class="h-52" src="./images/cupon-devider.png" alt="" />
+                  </div>
+                  <div class="m-auto text-center">
+                    <p class="font-extrabold text-3xl">NEW15</p>
+                    <p class="text-gray-600">Coupon Code</p>
+                  </div>
+                </div>
+                <!-- second coupon -->
+                <div
+                  class="flex justify-center items-center bg-pink-400 w-2/6 rounded-xl"
+                >
+                  <div class="m-auto">
+                    <p class="font-extrabold text-3xl">20% OFF</p>
+                    <p class="font-semibold">on your next purchase</p>
+                    <p class="text-gray-600">use by February 2024</p>
+                  </div>
+                  <div>
+                    <img class="h-52" src="./images/cupon-devider.png" alt="" />
+                  </div>
+                  <div class="m-auto text-center">
+                    <p class="font-extrabold text-3xl">Couode</p>
+                  </div>
+                </div>ple 20</p>
+                    <p class="text-gray-600">Coupon C
+              </div>
+            </section>
+            <section class="text-center mb-10">
+              <button
+                class="text-green-500 text-2xl font-semibold border-2 border-green-300 p-3 rounded-xl"
+              >
+                See All Offers
+              </button>
+            </section>
+            <!-- coupon section end -->
+      
+            <!-- ................. -->
+      
+            <!-- Ticket Section -->
+      
+            <section id=""
+              class="bg-gray-100 p-10 border-2 border-t-green-500 rounded-t-[70px] mx-auto my-0"
+            >
+              <div class="text-center">
+                <p class="text-2xl font-extrabold mb-4">Nabil Paribahan</p>
+                <p class="mb-8">
+                  Make your life easy, book bus tickets online with Nabil Paribahan. <br />
+                  Affordable prices, best bus operators - all in one place.
+                </p>
+              </div>
+              <!-- ........ -->
+              <div
+                class="flex justify-center items-center bg-white rounded-3xl w-10/12 mx-auto my-0 mb-6" id="ticket-section-1"
+              >
+                <div class="mr-3">
+                  <div class="flex justify-center items-center gap-x-60 mb-8">
+                    <div class="flex justify-start items-center gap-x-3">
+                      <div>
+                        <img class="w-10" src="./images/bus-logo.png" alt="" />
+                      </div>
+                      <div>
+                        <p class="text-black text-2xl">Nabil Paribahan</p>
+                        <p class="text-gray-400">Coach-RM-2-WEB ! AC_Business</p>
+                      </div>
+                    </div>
+                    <div>
+                      <a class="btn text-green-400 lg:text-xl bg-green-100"
+                        ><img class="w-6" src="./images/seat-green.png" alt="" />
+                        <span>40</span> Seats left</a
+                      >
+                    </div>
+                  </div>
+                  <!-- ...... -->
+                  <div class="border rounded-xl p-5 bg-gray-200">
+                    <div class="flex justify-between">
+                      <div class="ml-5"><p>Route</p></div>
+                      <div class="mr-10 font-bold"><p>Dhaka-Sylhet</p></div>
+                    </div>
+                    <div>
+                      <p class="ml-5">
+                        --------------------------------------------------------------------------------------------
+                      </p>
+                    </div>
+                    <div class="flex justify-between">
+                      <div class="ml-5"><p>Departure Time</p></div>
+                      <div class="mr-10 font-bold"><p>9:00 PM</p></div>
+                    </div>
+                    <div>
+                      <p class="ml-5">
+                        --------------------------------------------------------------------------------------------
+                      </p>
+                    </div>
+                    <div class="flex justify-between">
+                      <div>
+                        <button class="btn ml-5">Boarging Point - Laxmipur</button>
+                      </div>
+                      <div><button class="btn">Dropping Point - Bogura</button></div>
+                      <div>
+                        <button class="btn mr-10">Est. Time - 11 Hour</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- middle -->
+                <div class="">
+                  <img src="./images/info-devider.png" alt="" />
+                </div>
+                <!-- last -->
+                <div class="text-center">
+                  <img class="ml-3 w-10" src="./images/fare.png" alt="" />
+                  <p class="text-xl font-semibold">550 Taka</p>
+                  <p class="text-gray-600">Per Seat</p>
+                </div>
+              </div>
+              <!-- bla bla -->
+              <div
+                class="flex justify-between p-4 bg-white rounded-3xl w-10/12 mx-auto my-0" id="ticket-section"
+              >
+                <div>
+                  <div class="mt-2 mb-1"><p class="text-black text-2xl font-bold">Select your seat</p></div>
+                  <div class="mb-1">
+                    <p>
+                      -------------------------------------------------------------------------------
+                    </p>
+                  </div>
+                  <div class="flex">
+                    <div class="flex gap-x-2">
+                      <img src="./images/seat-gray.png" alt="" />
+                      <p>Available</p>
+                    </div>
+                    <div class="flex gap-x-2 ml-[305px]">
+                      <img src="./images/seat-green-filled.png" alt="" />
+                      <p class="text-green-500">Selected</p>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <p>
+                      -------------------------------------------------------------------------------
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto ml-[462px]"
+                    >
+                      <img class="w-8 rounded-3xl" src="./images/wheel.jpg" alt="" />
+                    </button>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        A
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        A1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        A2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        A3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        A4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        B
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        B1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        B2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        B3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        B4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        C
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        C1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        C2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        C3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        C4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        D
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        D1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        D2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        D3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        D4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        E4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        F
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        F1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        F2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        F3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        F4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        G
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        G1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        G2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        G3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        G4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        H
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        H1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        H2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        H3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        H4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        I
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        I1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        I2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        I3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        I4
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex gap-x-36 mb-3">
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        J
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        J1
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        J2
+                      </button>
+                    </div>
+                    <div class="flex gap-x-8">
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        J3
+                      </button>
+                      <button
+                        class="border border-gray-200 w-14 p-3 rounded-xl mb-3 mx-auto"
+                      >
+                        J4
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- middle -->
+                <div class="">
+                  <img src="./images/Line 1.png" alt="" />
+                </div>
+                <!-- last -->
+                <div>
+                  <div class="mt-2 mb-1"><p class="text-black text-2xl font-bold">Select your seat</p></div>
+                  <div class="mb-1">
+                    <p>
+                      ------------------------------------------------------------
+                    </p>
+                  </div>
+                  <div class="border rounded-xl bg-gray-200 p-4 mb-4">
+                    <div class="flex justify-between mb-1 font-bold">
+                      <div>
+                        <p>Seat <span>2</span></p>
+                      </div>
+                      <div><p>Class</p></div>
+                      <div><p>Price</p></div>
+                    </div>
+                    <div class="mb-1">
+                      <p>
+                        ----------------------------------------------------------
+                      </p>
+                    </div>
+                    <div class="flex justify-between mb-1">
+                      <div>
+                        <p><span>C2</span></p>
+                      </div>
+                      <div><p>Economy</p></div>
+                      <div>
+                        <p><span>550</span></p>
+                      </div>
+                    </div>
+                    <div class="flex justify-between mb-3">
+                      <div>
+                        <p><span>C2</span></p>
+                      </div>
+                      <div><p>Economy</p></div>
+                      <div>
+                        <p><span>550</span></p>
+                      </div>
+                    </div>
+                    <div><img class="mb-2" src="./images/Line 6.png" alt="" /></div>
+                    <div class="flex justify-between mb-2 font-bold">
+                      <div><p>Total Price</p></div>
+                      <div>
+                        <p><span>1100</span></p>
+                      </div>
+                    </div>
+                    <div class="p-1 mb-2">
+                      <label class="input input-bordered flex items-center gap-2">
+                        <input
+                          type="text"
+                          class="grow"
+                          placeholder="Have any coupon?"
+                        />
+                        <button
+                          class="border bg-green-500 rounded-xl px-4 py-2 text-white text-lg mx-auto my-0 w-[80px]"
+                        >
+                          Apply
+                        </button>
+                      </label>
+                    </div>
+                    <div class="flex justify-between mb-2 font-bold">
+                      <div><p>Grand Price</p></div>
+                      <div>
+                        <p><span>1100</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <form action="">
+                      <div class="mb-3">
+                          <p class="text-lg font-semibold">Passenger Name *</p>
+                        </div>
+                        <div class="mb-3">
+                          <label class="input input-bordered flex items-center gap-2">
+                            <input
+                              type="text"
+                              class="grow"
+                              placeholder="Enter your name"
+                              required
+                            />
+                          </label>
+                        </div>
+                        <div class="mb-3">
+                          <p class="text-lg font-semibold">Phone Number *</p>
+                        </div>
+                        <div class="mb-3">
+                          <label class="input input-bordered flex items-center gap-2">
+                            <input
+                              type="tel"
+                              class="grow"
+                              placeholder="Enter your Phone number"
+                              required pattern="[0-9]{5}[0-9]{6}"
+                            />
+                          </label>
+                        </div>
+                        <div class="mb-3">
+                          <p class="text-lg font-semibold">Email Id *</p>
+                        </div>
+                        <div class="mb-5">
+                          <label class="input input-bordered flex items-center gap-2">
+                            <input
+                              type="email"
+                              class="grow"
+                              placeholder="Enter your email id"
+                              required
+                            />
+                          </label>
+                        </div>
+                        <div class="mb-5">
+                          <input type="submit" class="border rounded-2xl text-3xl text-white bg-green-600 p-[12px] w-full">
+                        </div>
+                  </form>
+                  <!--  -->
+                  <div class="flex justify-evenly mb-2">
+                    <div><u>Terms and Conditon</u></div>
+                    <div><u>Cancellation Policy</u></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+          <footer>
+              <div class="bg-black w-full p-16">
+                  <div class="flex justify-evenly items-center mb-7 gap-x-36">
+                      <div>
+                          <p class="text-white text-3xl mb-3">Nabil Paribahan</p>
+                          <p class="text-gray-400">E-Ticket is a digital platform to make your daily commuting better.</p>
+                      </div>
+                      <div>
+                          <p class="text-white mb-3">Download our app</p>
+                          <!-- <img src="./images/playstore.png" alt=""> -->
+                          <div class="flex justify-center items-center gap-x-4">
+                              <div><img src="./images/playstore.png" alt=""></div>
+                              <div class="text-white">
+                                  <p class="text-xs">Get it on</p>
+                                  <p>Google PLay Store</p>
+                              </div>
+                          </div>
+                      </div>
+      
+                  </div>
+                  <div class="flex justify-center items-center mb-5">
+                      <img class="w-[930px]" src="./images/Line footer.png" alt="">
+                  </div>
+                  
+                  <!--  -->
+                  <div class="flex justify-evenly">
+                      <div>
+                          <p class="text-gray-400">@all rights reserved, Nabil Paribahan services limited.2024</p>
+                      </div>
+                      <div>
+                          <div class="flex justify-evenly gap-x-6 text-white">
+                              <div><p>Terms & condition</p></div>
+                              <div><p>Return & refund policy</p></div>
+                              <div><p>Privacy policy</p></div>
+                          </div>
+                      </div>
+      
+                      
+                  </div>
+              </div>
+      
+          </footer>
+    </div>
+    <!-- 2nd part -->
+    <div class="hidden">
+        <div class="flex flex-col justify-center items-center mx-72 my-24 p-10 gap-y-2 border-2 rounded-2xl bg-gray-200 w-[700px]">
+            <img class="w-16" src="./images/success.png" alt="">
+            <p class="text-green-500 text-2xl font-bold">SUCCESS</p>
+            <p class="text-black">Thank you for Booking Our Bus Seats. </p>
+            <p>We are working hard to find the best service and deals for you.</p>
+            <p>Shortly you will find a confirmation in your email.</p>
+            <button class="text-white border rounded-3xl bg-green-600 w-[200px] py-1">Continue</button>
+        </div>
+    </div>
+
+    <script src="./scripts/function-call.js"></script>
+    <script src="./scripts/all-in-one.js"></script>
+
+
+  </body>
+</html>
